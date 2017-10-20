@@ -1,0 +1,44 @@
+// ConsoleApplication6.cpp: определяет точку входа для консольного приложения.
+//
+
+#include "stdafx.h"
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	double a, b,h,d, sum, y, k, x;
+	printf("vvedi a:");
+	scanf_s("%lf", &a);
+	printf("vvedi b:");
+	scanf_s("%lf", &b);
+	printf("vvedi krok:");
+	scanf_s("%lf", &h);
+	printf("vvedi pohubka:");
+	scanf_s("%lf", &d);
+	// makes the calculation and gives the result to sum var  
+	for (x = a; x <= b+h; x = x + h)
+
+	{
+		k = 0;
+		sum = 0;
+		do
+		{ 
+			k++;
+			y = 1;
+			y = 1 / pow(2, k)*sin(x / pow(2, k));
+			sum = sum + y;
+
+	}
+		//prints the sum and the value of y
+	while (fabs(y) > d);
+	
+	printf("your x=%lf\t your  sum=%lf\n ", x,sum,y);
+	printf("y= y=%lf\n", y);
+	//printf("your sum=%lf\n", sum);
+	}
+	system("pause");
+	return 0;
+}
+
